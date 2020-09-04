@@ -60,7 +60,7 @@ const App = () => {
     const url =
       countryCode === "worldwide"
         ? "https://disease.sh/v3/covid-19/all"
-        : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
+        : `https://disease.sh/v3/covid-19/countries/${countryCode}?yesterday=true`;
     await fetch(url)
       .then((response) => response.json())
       .then((data) => {
@@ -75,7 +75,9 @@ const App = () => {
     <div className="app">
       <div className="app__left">
         <div className="app__header">
-          <h1>COVID-19 Tracker</h1>
+          <h1>COVID-19 Tracker<br/>
+          <span><h5>By Derrick</h5></span>
+          </h1>
           <FormControl className="app__dropdown">
             <Select
               variant="outlined"
